@@ -25,7 +25,18 @@
 		// Some stricter flags (disabled by default)
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false
+		"noPropertyAccessFromIndexSignature": false,
+
+		// Effect Language Service (run via `effect-tsgo tsrs`)
+		"plugins": [
+			{
+				"name": "@effect/language-service",
+				"allowedUnstableApis": ["effect/cli", "@effect/platform-bun"],
+				"diagnosticSeverity": {
+					"floatingEffect": "error"
+				}
+			}
+		]
 	},
 	"include": ["src", "*.ts"]
 }
